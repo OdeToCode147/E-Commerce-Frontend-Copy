@@ -1,0 +1,99 @@
+.Navigator{
+    background-color: #0f0f0f;
+    color: wheat;
+}
+.navbar-dark{
+    border-top: 1px solid wheat;
+    border-left: 1px solid wheat;
+    border-right: 1px solid wheat;
+}
+.NavbarTop{
+    display: flex;
+    flex-direction: row;
+}
+.NavbarTopRight{
+    font-size : 20px;
+    margin-top : 5px;
+}
+.logoContainer{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+.MainNavContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close */
+}
+
+
+.appFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.appFooterTopMost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.appFooterTopMostContent{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Featured{
+    text-align: center;
+}
+.carouselContainer{
+    display: flex;
+}
+.carousel-control-next, .carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+.Promises{
+    max-height: 80px;
+}
+.appFooterTop{
+    background-color: #0f0f0f;
+    color: wheat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.appFooterMiddle{
+    background-color: #0f0f0f;
+    color: wheat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.appFooterMiddleContent , .appFooterTopContent{
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    flex-wrap: wrap;
+}
+
+.appFooterBottom{
+    background-color: #0f0f0f;
+    color: wheat;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
