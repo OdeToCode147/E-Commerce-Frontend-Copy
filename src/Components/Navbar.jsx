@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavbarFooter.css";
-const Navbar = () => {
-  const [itemsAdded , setItemsAdded]=useState(2)
+const Navbar = ({ response }) => {
+  // const [itemsAdded , setItemsAdded]=useState(2)
 
   return (
     <div className="Navigator">
       <div className="NavbarTop">
         <div class="dropdown">
-          <Link style={{color : "wheat"}}
+          <Link
+            style={{ color: "wheat" }}
             class="nav-link dropdown-toggle"
             to="#"
             id="navbarDropdownMenuLink"
@@ -18,9 +19,9 @@ const Navbar = () => {
             aria-expanded="false"
           >
             EN
-          </Link >
+          </Link>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <Link  class="dropdown-item" to="#">
+            <Link class="dropdown-item" to="#">
               EN
             </Link>
             <Link class="dropdown-item" to="#">
@@ -35,8 +36,9 @@ const Navbar = () => {
           </div>
           <div></div>
         </div>
-        <div  class="dropdown">
-          <Link style={{color : "wheat"}}
+        <div class="dropdown">
+          <Link
+            style={{ color: "wheat" }}
             class="nav-link dropdown-toggle"
             to="#"
             id="navbarDropdownMenuLink"
@@ -65,7 +67,7 @@ const Navbar = () => {
         </div>
         <div className="NavbarTopRight mx-4">
           <i class="bi bi-bag-fill"></i>
-          <span>{itemsAdded} Items</span>
+          <span>{response} Items</span>
         </div>
       </div>
       <div className="logoContainer">

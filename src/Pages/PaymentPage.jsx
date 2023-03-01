@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import "./PaymentPage.css";
 import store from "../Database/Store";
 
-const PaymentPage = () => {
+const PaymentPage = ({ response, setResponse }) => {
   const productID = useParams().id;
   console.log(productID);
   const [itemDetails, setItemsDetails] = useState({});
   
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const [total, setTotal] = useState(0);
   console.log(itemDetails);
 
@@ -25,9 +25,9 @@ const PaymentPage = () => {
     if (productID && randomItems && randomItems.items) {
       setItemsDetails(randomItems.items.find((item) => item.id == productID));
     }
-    setTotal(count * itemDetails.cost);
+    setTotal(response * itemDetails.cost);
     window.scrollTo(0, 0);
-  }, [randomItems,productID , count]);
+  }, [randomItems,productID , response]);
   console.log(itemDetails);
 
 
@@ -57,14 +57,14 @@ const PaymentPage = () => {
           <h3 className="QuantityHeader">Quantity</h3>
           <button
             className="btn btn-danger"
-            onClick={() => {if(count>0){setCount(count - 1)}}}
+            onClick={() => {if(response>0){setResponse(response - 1)}}}
           >
             -
           </button>
-          <h2 className="itemCount"> {count}</h2>
+          <h2 className="itemCount"> {response}</h2>
           <button
             className="btn btn-success"
-            onClick={() => setCount(count + 1)}
+            onClick={() => setResponse(response + 1)}
           >
             +
           </button>
