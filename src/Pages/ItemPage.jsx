@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./ItemPage.css";
-import store from "../Database/Store";
 
 const ItemPage = () => {
  
@@ -17,7 +16,9 @@ const ItemPage = () => {
   const [randomItems, setRandomItems] = useState();
 
   useEffect(()=>{
-    setRandomItems(store[0])
+    fetch("https://e-commerce-backend-wq9d.onrender.com/store")
+      .then((response) => response.json())
+      .then((json) => setRandomItems(json[0]));
   },[])
 
   useEffect(() => {

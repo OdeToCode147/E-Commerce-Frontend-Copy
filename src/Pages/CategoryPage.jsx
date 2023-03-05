@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../Components/Card";
 import CategoryHeader from "../Components/CategoryHeader";
-import allData from "../Database/AllData";
 
 const CategoryPage = () => {
   const CategoryID = useParams().id;
@@ -12,7 +11,9 @@ const CategoryPage = () => {
   const [randomItems, setRandomItems] = useState();
 
   useEffect(()=>{
-    setRandomItems(allData)
+    fetch("https://e-commerce-backend-wq9d.onrender.com/alldata")
+    .then((response) => response.json())
+    .then((json) => setRandomItems(json));
   }, [CategoryID])
 
   useEffect(() => {

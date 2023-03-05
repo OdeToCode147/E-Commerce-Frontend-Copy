@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 import "./Home.css";
-import store from "../Database/Store";
 
 const Home = () => {
   const [randomItems, setRandomItems] = useState();
 
 
   useEffect(()=>{
-    setRandomItems(store[0])
+    fetch("https://e-commerce-backend-wq9d.onrender.com/store")
+      .then((response) => response.json())
+      .then((json) => setRandomItems(json[0]));
   },[])
 
 

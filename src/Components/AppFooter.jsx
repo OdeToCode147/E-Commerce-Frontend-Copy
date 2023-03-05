@@ -10,14 +10,15 @@ import Support from "../Images/support.svg";
 import Refunds from "../Images/refund.svg";
 import Card1 from "./Card1";
 import "./NavbarFooter.css";
-import store from "../Database/Store";
 
 const AppFooter = () => {
 
   const [randomItems, setRandomItems] = useState();
 
   useEffect(()=>{
-    setRandomItems(store[0])
+    fetch('https://e-commerce-backend-wq9d.onrender.com/store')
+      .then(response => response.json())
+      .then(json => setRandomItems(json[0]))
   },[])
 
   return (

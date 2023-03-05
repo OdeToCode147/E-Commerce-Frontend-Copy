@@ -3,7 +3,6 @@ import Card from "../Components/Card";
 import "../Components/Card.css";
 import CategoryHeader from "../Components/CategoryHeader";
 import "./Store.css";
-import store from "../Database/Store";
 
 const Store = () => {
   const [price, setPrice] = useState();
@@ -12,7 +11,9 @@ const Store = () => {
   const [randomItems, setRandomItems] = useState();
 
   useEffect(() => {
-    setRandomItems(store[0]);
+    fetch("https://e-commerce-backend-wq9d.onrender.com/store")
+      .then((response) => response.json())
+      .then((json) => setRandomItems(json[0]));
   }, []);
 
   console.log(randomItems);
